@@ -15,7 +15,7 @@ app.get("/orders", (req, res) => {
 
 app.post("/orders", (req, res) => {
     index += 1
-    console.log('POST /orders called. Created order', index)
+    console.log('POST /orders called. Created order', index, 'Payload is', JSON.stringify(req.body))
     req.body.id = index
     orders.push(req.body)
     res.status(201).json(req.body)
